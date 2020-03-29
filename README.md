@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![](https://jitpack.io/v/adawoud/BottomSheetTimeRangePicker.svg)](https://jitpack.io/#adawoud/BottomSheetTimeRangePicker)
+
 # NSFW(Nude Content) Detector
 
 NSFW Content detector using
@@ -7,9 +9,7 @@ NSFW Content detector using
 
 This module contains pre trained
 [TensorFlow Lite(tflite)](https://www.tensorflow.org/lite) model that
-compatible with AutoML.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![](https://jitpack.io/v/adawoud/BottomSheetTimeRangePicker.svg)](https://jitpack.io/#adawoud/BottomSheetTimeRangePicker)
+compatible with AutoML. And this is an `OnDeviceAutoMLImageLabeler`.
 
 ## Installation
 
@@ -51,7 +51,7 @@ dependencies {
     implementation "com.google.firebase:firebase-ml-vision-automl:<latest_version>"
     implementation "com.google.firebase:firebase-ml-model-interpreter:<latest_version>"
 
-    implementation 'com.github.nipunru:nsfw-detector:0.0.3'
+    implementation 'com.github.nipunru:nsfw-detector:0.0.4'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -45,29 +45,29 @@ object NSFWDetector {
                 when (label.text) {
                     LABEL_SFW -> {
                         if (label.confidence > threshold) {
-                            callback(true,label.confidence, bitmap)
+                            callback(true, label.confidence, bitmap)
                         } else {
-                            callback(false,label.confidence, bitmap)
+                            callback(false, label.confidence, bitmap)
                         }
                     }
                     LABEL_NSFW -> {
                         if (label.confidence < (1 - threshold)) {
-                            callback(true,label.confidence, bitmap)
+                            callback(true, label.confidence, bitmap)
                         } else {
-                            callback(false,label.confidence, bitmap)
+                            callback(false, label.confidence, bitmap)
                         }
                     }
                     else -> {
-                        callback(false,0.0F , bitmap)
+                        callback(false, 0.0F, bitmap)
                     }
                 }
             } catch (e: Exception) {
                 Log.e(TAG, e.localizedMessage ?: "NSFW Scan Error")
-                callback(false,0.0F , bitmap)
+                callback(false, 0.0F, bitmap)
             }
         }.addOnFailureListener { e ->
             Log.e(TAG, e.localizedMessage ?: "NSFW Scan Error")
-            callback(false,0.0F , bitmap)
+            callback(false, 0.0F, bitmap)
         }
     }
 }
