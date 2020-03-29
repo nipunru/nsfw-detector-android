@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![](https://jitpack.io/v/adawoud/BottomSheetTimeRangePicker.svg)](https://jitpack.io/#adawoud/BottomSheetTimeRangePicker)
 
-# NSFW(Nude Content) Detector
+# NSFW(Nude Content) Detector Android
 
 NSFW Content detector using
 [Firebase MlKit (AutoML)](https://firebase.google.com/docs/ml-kit/automl-image-labeling)
@@ -51,7 +51,7 @@ dependencies {
     implementation "com.google.firebase:firebase-ml-vision-automl:<latest_version>"
     implementation "com.google.firebase:firebase-ml-model-interpreter:<latest_version>"
 
-    implementation 'com.github.nipunru:nsfw-detector:0.0.4'
+    implementation 'com.github.nipunru:nsfw-detector-android:0.0.4'
 }
 
 apply plugin: 'com.google.gms.google-services'
