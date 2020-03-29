@@ -26,12 +26,12 @@ object NSFWDetector {
      * This function return weather the bitmap is NSFW or not
      * @param bitmap: Bitmap Image
      * @param confidenceThreshold: Float 0 to 1 (Default is 0.7)
-     * @return callback with Boolean and Bitmap
+     * @return callback with isNSFW(Boolean), confidence(Float), and image(Bitmap)
      */
     fun isNSFW(
         bitmap: Bitmap,
         confidenceThreshold: Float = CONFIDENCE_THRESHOLD,
-        callback: (Boolean, Bitmap) -> Unit
+        callback: (Boolean, Float, Bitmap) -> Unit
     ) {
         var threshold = confidenceThreshold
 
@@ -45,29 +45,29 @@ object NSFWDetector {
                 when (label.text) {
                     LABEL_SFW -> {
                         if (label.confidence > threshold) {
-                            callback(true, bitmap)
+                            callback(true,label.confidence, bitmap)
                         } else {
-                            callback(false, bitmap)
+                            callback(false,label.confidence, bitmap)
                         }
                     }
                     LABEL_NSFW -> {
                         if (label.confidence < (1 - threshold)) {
-                            callback(true, bitmap)
+                            callback(true,label.confidence, bitmap)
                         } else {
-                            callback(false, bitmap)
+                            callback(false,label.confidence, bitmap)
                         }
                     }
                     else -> {
-                        callback(false, bitmap)
+                        callback(false,0.0F , bitmap)
                     }
                 }
             } catch (e: Exception) {
                 Log.e(TAG, e.localizedMessage ?: "NSFW Scan Error")
-                callback(false, bitmap)
+                callback(false,0.0F , bitmap)
             }
         }.addOnFailureListener { e ->
             Log.e(TAG, e.localizedMessage ?: "NSFW Scan Error")
-            callback(false, bitmap)
+            callback(false,0.0F , bitmap)
         }
     }
 }
