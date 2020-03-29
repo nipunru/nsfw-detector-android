@@ -51,7 +51,7 @@ dependencies {
     implementation "com.google.firebase:firebase-ml-vision-automl:<latest_version>"
     implementation "com.google.firebase:firebase-ml-model-interpreter:<latest_version>"
 
-    implementation 'com.github.nipunru:nsfw-detector-android:0.0.4'
+    implementation 'com.github.nipunru:nsfw-detector-android:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
