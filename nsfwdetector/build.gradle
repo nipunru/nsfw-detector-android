@@ -65,4 +65,3 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
-apply plugin: 'com.google.gms.google-services'
