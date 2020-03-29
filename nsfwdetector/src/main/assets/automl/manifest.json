@@ -1,0 +1,5 @@
+{
+  "modelFile": "NSFW.tflite",
+  "labelsFile": "dict.txt",
+  "modelType": "IMAGE_LABELING"
+}
